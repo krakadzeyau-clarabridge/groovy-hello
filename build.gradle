@@ -1,0 +1,43 @@
+plugins {
+    id "java"
+    id "groovy"
+    id "io.gatling.gradle" version "3.7.6.1"
+}
+
+description "Sample code: Groovy, Spock, Gatling"
+group "com.clarabridge.qa"
+version "1.0-SNAPSHOT"
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2" }
+        gradlePluginPortal()
+    }
+}
+
+dependencies {
+    implementation "org.codehaus.groovy:groovy-all:3.0.8"
+
+    implementation "org.spockframework:spock-core:2.1-groovy-3.0"
+
+    //implementation "io.gatling:gatling-http-java:3.7.6"
+    //XXX testImplementation "io.gatling.highcharts:gatling-charts-highcharts:3.7.2"
+    implementation "ru.tinkoff:gatling-amqp-plugin_2.13:0.6.2"
+}
+
+gatling {
+    logLevel = "WARN"
+    logHttp = "NONE"
+}
+
+sourceSets {
+    gatling {
+//        java.srcDir "src/main/java/gatling/java"
+        java.srcDir "src/main/java/gatling/java"
+//        java.srcDirs = ["folder1"]
+
+//        resources.srcDir "src/main/resources"
+//        resources.srcDirs = ["folder2"]
+    }
+}

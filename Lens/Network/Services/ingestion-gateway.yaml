@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingestion-gateway
+  namespace: dkrakadzeyau
+  uid: 381b874c-4eca-44c1-b60f-10ebf17767d2
+  resourceVersion: '285775794'
+  creationTimestamp: '2022-06-06T13:39:54Z'
+  labels:
+    app.kubernetes.io/instance: ingestion-gateway
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: ingestion-gateway
+    helm.sh/chart: ingestion-gateway-0.2.6
+  annotations:
+    meta.helm.sh/release-name: ingestion-gateway
+    meta.helm.sh/release-namespace: dkrakadzeyau
+  managedFields:
+    - manager: Go-http-client
+      operation: Update
+      apiVersion: v1
+      time: '2022-06-06T13:39:54Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:helm.sh/chart: {}
+        f:spec:
+          f:ports:
+            .: {}
+            k:{"port":8085,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":8123,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+          f:sessionAffinity: {}
+          f:type: {}
+  selfLink: /api/v1/namespaces/dkrakadzeyau/services/ingestion-gateway
+status:
+  loadBalancer: {}
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8123
+      targetPort: http
+    - name: management
+      protocol: TCP
+      port: 8085
+      targetPort: management
+  selector:
+    app.kubernetes.io/instance: ingestion-gateway
+    app.kubernetes.io/name: ingestion-gateway
+  clusterIP: 10.100.252.42
+  clusterIPs:
+    - 10.100.252.42
+  type: ClusterIP
+  sessionAffinity: None

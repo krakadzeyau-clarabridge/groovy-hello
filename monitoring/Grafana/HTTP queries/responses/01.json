@@ -1,0 +1,800 @@
+{
+    "results": {
+        "A": {
+            "frames": [
+                {
+                    "schema": {
+                        "name": "ingestion-gateway - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "ingestion-gateway",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "ingestion-gateway - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0025985778003828042,
+                                0.0015679007300237505,
+                                0.0014762615133978947,
+                                0.001562925422588027,
+                                0.0014171607184076812,
+                                0.0014861459771378436,
+                                0.0014791072265166309,
+                                0.0014576754943741578,
+                                0.0021109470941301327,
+                                0.0015774062928271874,
+                                0.0016042413043403968,
+                                0.0015854675907622092,
+                                0.0015768695757359726,
+                                0.0015401772312301852,
+                                0.001601289741891903,
+                                0.0015349177993201812
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "message-router - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "message-router",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "message-router - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0022070988879635796,
+                                0.0029758784011005945,
+                                0.002252177540873326,
+                                0.002140220453464062,
+                                0.00226406167426888,
+                                0.002051072597854014,
+                                0.002526393120700467,
+                                0.002278521734698339,
+                                0.002229873735879923,
+                                0.0023039621476825165,
+                                0.0023380240487646054,
+                                0.0021409920154670512,
+                                0.002127368137633263,
+                                0.002302725606905057,
+                                0.003299951901644754,
+                                0.002199239427544566
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-chapters-service - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-chapters-service",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-chapters-service - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0009216395198160753,
+                                0.0009118103427484038,
+                                0.000941135161929165,
+                                0.0008752936670552163,
+                                0.0009527785920845485,
+                                0.0008694531908230686,
+                                0.000773317372483162,
+                                0.0009138406296910319,
+                                0.0009164076234955442,
+                                0.0008807573864439016,
+                                0.0008994079394996717,
+                                0.0010045817395531627,
+                                0.0008970250785957665,
+                                0.00091912677339245,
+                                0.0008940814309703785,
+                                0.0009806591728147751
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-ernie-api - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-ernie-api",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-ernie-api - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.008463781258899355,
+                                0.008452496978422909,
+                                0.008304314951056992,
+                                0.00867336252963129,
+                                0.00824932299740578,
+                                0.008378136398282714,
+                                0.008424095458152947,
+                                0.008542146633882804,
+                                0.008270107179111643,
+                                0.008716048590726083,
+                                0.008490924931059149,
+                                0.008451087267694467,
+                                0.008366379728317996,
+                                0.008560811953571388,
+                                0.008542987046318591,
+                                0.008544673878578773
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-ernie-serving - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-ernie-serving",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-ernie-serving - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.11974428339195606,
+                                0.12037713775608709,
+                                0.12219673214819522,
+                                0.11854336669147728,
+                                0.122699882009669,
+                                0.1218105410182911,
+                                0.1255518901454464,
+                                0.12562071524527277,
+                                0.12480442881554255,
+                                0.11699906212748261,
+                                0.11208782221674513,
+                                0.12378918451262694,
+                                0.1191923819302531,
+                                0.12783361255720568,
+                                0.12085389212018209,
+                                0.1203556799707026
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-service-en - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-service-en",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-service-en - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0007381128355128739,
+                                0.000791649846071414,
+                                0.0008052153391339017,
+                                0.000781857542601083,
+                                0.0007823993175603912,
+                                0.0007435602704926445,
+                                0.0007991603609364392,
+                                0.0007418282916422526,
+                                0.0007305738306917821,
+                                0.0007920981113291579,
+                                0.0008130314738840221,
+                                0.0008035724908239043,
+                                0.0008125017444759008,
+                                0.0008045029534083067,
+                                0.0007414185482365221,
+                                0.0007715959438904089
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-spacy-service-en - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-spacy-service-en",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-spacy-service-en - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0008462241835108527,
+                                0.0009378121924774348,
+                                0.0008093794970964407,
+                                0.0007288615559372943,
+                                0.0006985351767927854,
+                                0.0007288629342963488,
+                                0.0007297380482989536,
+                                0.0008458853302204213,
+                                0.0007473073438199696,
+                                0.0007810621667393123,
+                                0.0008120117242731465,
+                                0.0008046858430174853,
+                                0.0008232027791856414,
+                                0.0007916924374242258,
+                                0.0008576369876123318,
+                                0.0007357655470426966
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "zipkin - deployment",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: sum(\n  node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{cluster=\"\", namespace=\"dkrakadzeyau\"}\n* on(namespace,pod)\n  group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload_type=\"deployment\"}\n) by (workload, workload_type)\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "zipkin",
+                                    "workload_type": "deployment"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "zipkin - deployment"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0.0017661356076054823,
+                                0.0016323009237766823,
+                                0.0016680461852700314,
+                                0.0014397839718412794,
+                                0.0015745999907247755,
+                                0.0017605712292180437,
+                                0.001566534764988917,
+                                0.0015023429540849391,
+                                0.001593765165442968,
+                                0.0015676730092200595,
+                                0.0016646716140470668,
+                                0.0015622648058125402,
+                                0.0017064254266089172,
+                                0.0017420073128404634,
+                                0.0015428707498226309,
+                                0.001758169291919615
+                            ]
+                        ]
+                    }
+                }
+            ]
+        },
+        "B": {
+            "frames": [
+                {
+                    "schema": {
+                        "name": "quota - requests",
+                        "refId": "B",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: scalar(kube_resourcequota{cluster=\"\", namespace=\"dkrakadzeyau\", type=\"hard\",resource=\"requests.cpu\"})\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {},
+                                "config": {
+                                    "displayNameFromDS": "quota - requests"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ]
+                        ]
+                    }
+                }
+            ]
+        },
+        "C": {
+            "frames": [
+                {
+                    "schema": {
+                        "name": "quota - limits",
+                        "refId": "C",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: scalar(kube_resourcequota{cluster=\"\", namespace=\"dkrakadzeyau\", type=\"hard\",resource=\"limits.cpu\"})\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {},
+                                "config": {
+                                    "displayNameFromDS": "quota - limits"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ]
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

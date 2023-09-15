@@ -1,0 +1,27 @@
+curl 'https://prometheus-dev-v2.clarabridge.io/api/v1/query_range?query=%28avg%28irate%28container_network_transmit_bytes_total%7Bjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%7D%5B30s%5D%29*on%28namespace%2Cpod%29group_left%28workload%2Cworkload_type%29namespace_workload_pod%3Akube_pod_owner%3Arelabel%7Bcluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%2Cworkload%3D%7E%22.%2B%22%2Cworkload_type%3D%22deployment%22%7D%29by%28workload%29%29%0A&start=1677757200&end=1677759000&step=30' \
+  -H 'authority: prometheus-dev-v2.clarabridge.io' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'referer: https://prometheus-dev-v2.clarabridge.io/graph?g0.expr=(avg(irate(container_network_transmit_bytes_total%7Bjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%7D%5B30s%5D)*on(namespace%2Cpod)group_left(workload%2Cworkload_type)namespace_workload_pod%3Akube_pod_owner%3Arelabel%7Bcluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%2Cworkload%3D~%22.%2B%22%2Cworkload_type%3D%22deployment%22%7D)by(workload))%0A&g0.tab=0&g0.stacked=0&g0.show_exemplars=1&g0.range_input=30m&g0.end_input=2023-03-02%2012%3A10%3A00&g0.moment_input=2023-03-02%2012%3A10%3A00&g0.step_input=30' \
+  -H 'sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
+  --compressed
+
+curl 'https://prometheus-dev-v2.clarabridge.io/api/v1/query_exemplars?query=%28avg%28irate%28container_network_transmit_bytes_total%7Bjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%7D%5B30s%5D%29*on%28namespace%2Cpod%29group_left%28workload%2Cworkload_type%29namespace_workload_pod%3Akube_pod_owner%3Arelabel%7Bcluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%2Cworkload%3D%7E%22.%2B%22%2Cworkload_type%3D%22deployment%22%7D%29by%28workload%29%29%0A&start=1677757200&end=1677759000' \
+  -H 'authority: prometheus-dev-v2.clarabridge.io' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'referer: https://prometheus-dev-v2.clarabridge.io/graph?g0.expr=(avg(irate(container_network_transmit_bytes_total%7Bjob%3D%22kubelet%22%2Cmetrics_path%3D%22%2Fmetrics%2Fcadvisor%22%2Ccluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%7D%5B30s%5D)*on(namespace%2Cpod)group_left(workload%2Cworkload_type)namespace_workload_pod%3Akube_pod_owner%3Arelabel%7Bcluster%3D%22%22%2Cnamespace%3D%22dkrakadzeyau%22%2Cworkload%3D~%22.%2B%22%2Cworkload_type%3D%22deployment%22%7D)by(workload))%0A&g0.tab=0&g0.stacked=0&g0.show_exemplars=1&g0.range_input=30m&g0.end_input=2023-03-02%2012%3A10%3A00&g0.moment_input=2023-03-02%2012%3A10%3A00&g0.step_input=30' \
+  -H 'sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
+  --compressed

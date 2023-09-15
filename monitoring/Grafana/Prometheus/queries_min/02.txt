@@ -1,0 +1,1 @@
+sum(container_memory_working_set_bytes{job="kubelet",metrics_path="/metrics/cadvisor",cluster="",namespace="dkrakadzeyau",container!="",image!=""}*on(namespace,pod)group_left(workload,workload_type)namespace_workload_pod:kube_pod_owner:relabel{cluster="",namespace="dkrakadzeyau",workload_type="deployment"})by(workload,workload_type)

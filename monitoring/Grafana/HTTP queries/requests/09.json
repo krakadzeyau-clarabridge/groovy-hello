@@ -1,0 +1,35 @@
+{
+    "queries": [
+        {
+            "expr": "(sum(irate(container_network_receive_packets_dropped_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[$__rate_interval])* on (namespace,pod)group_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "{{workload}}",
+            "legendLink": null,
+            "step": 10,
+            "refId": "A",
+            "datasource": {
+                "uid": "prometheus",
+                "type": "prometheus"
+            },
+            "queryType": "timeSeriesQuery",
+            "exemplar": false,
+            "requestId": "12A",
+            "utcOffsetSec": -18000,
+            "interval": "",
+            "datasourceId": 1,
+            "intervalMs": 60000,
+            "maxDataPoints": 514
+        }
+    ],
+    "range": {
+        "from": "2023-03-02T11:40:00.000Z",
+        "to": "2023-03-02T12:10:00.000Z",
+        "raw": {
+            "from": "2023-03-02T11:40:00.000Z",
+            "to": "2023-03-02T12:10:00.000Z"
+        }
+    },
+    "from": "1677757200000",
+    "to": "1677759000000"
+}

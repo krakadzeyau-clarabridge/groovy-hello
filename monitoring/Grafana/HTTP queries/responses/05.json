@@ -1,0 +1,632 @@
+{
+    "results": {
+        "A": {
+            "frames": [
+                {
+                    "schema": {
+                        "name": "ingestion-gateway",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "ingestion-gateway"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "ingestion-gateway"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                82.66020463112547,
+                                82.74394012222756,
+                                79.04498549942672,
+                                31.564877647542666,
+                                84.58587633321243,
+                                72.22069868142374,
+                                93.51440754843105,
+                                77.51857759211771,
+                                84.37118794705546,
+                                83.96703293095683,
+                                78.7713815236751,
+                                76.71998034949294,
+                                86.48573125152816,
+                                2228.7713358333212,
+                                67.95288599904066,
+                                85.21925491121902
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "message-router",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "message-router"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "message-router"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                110.4271947603516,
+                                116.34724707153258,
+                                83.26732328299815,
+                                108.20409007649671,
+                                123.1455233731453,
+                                113.70926353605338,
+                                1766.982058451174,
+                                96.99650854846658,
+                                119.16459644319454,
+                                103.49780078393825,
+                                97.26417782844115,
+                                134.56852202839127,
+                                139.43666378337167,
+                                81.12246714860582,
+                                120.65014654942712,
+                                110.68678605795233
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-chapters-service",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-chapters-service"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-chapters-service"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                18.117469879518072,
+                                15.805654824469205,
+                                21.01824026836257,
+                                20.12176763790854,
+                                34.296348812477845,
+                                18.959213263569314,
+                                22.71011100203881,
+                                18.143701737451735,
+                                0,
+                                22.36891037560431,
+                                19.10615589860873,
+                                16.199402116829603,
+                                19.033605468008354,
+                                21.34871339840284,
+                                0,
+                                21.417889189574137
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-ernie-api",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-ernie-api"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-ernie-api"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                49.20070044625205,
+                                84.34129991256194,
+                                86.17568276870009,
+                                128.73092549345787,
+                                119.72280780552356,
+                                87.91058948697852,
+                                94.3943558022491,
+                                100.40029871758915,
+                                125.95006029674394,
+                                104.13650624531697,
+                                92.57284538618558,
+                                105.30230969954795,
+                                85.08231269991387,
+                                138.42108558191947,
+                                86.27432925262136,
+                                64.8899496154866
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-ernie-serving",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-ernie-serving"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-ernie-serving"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                47.58378799688231,
+                                36.381790383475305,
+                                37.47134212801143,
+                                46.97180427361234,
+                                65.06824582942154,
+                                52.861511577107905,
+                                60.44896054746228,
+                                53.42849859801173,
+                                74.4537933960263,
+                                62.50814332247557,
+                                45.447028081897265,
+                                46.61948742553277,
+                                44.04380341880342,
+                                53.93538434153143,
+                                48.82373803050006,
+                                50.38808212318477
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-service-en",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-service-en"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-service-en"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                6.487025948103792,
+                                26.729216670303295,
+                                25.50046837594976,
+                                23.15877321093261,
+                                27.22423883250611,
+                                22.160111798762227,
+                                6.604085098353695,
+                                21.920049651592517,
+                                30.19117189928505,
+                                0,
+                                20.847866917091494,
+                                7.205352547606793,
+                                19.519775213929925,
+                                7.59713479487736,
+                                28.020281346498415,
+                                26.00836820083682
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "nlp-spacy-service-en",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "nlp-spacy-service-en"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "nlp-spacy-service-en"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                0,
+                                37.657174310953124,
+                                0,
+                                0.9698873083317938,
+                                14.98993213513312,
+                                0,
+                                29.115202296958998,
+                                0,
+                                0,
+                                28.411032462777644,
+                                27.629042621546372,
+                                0,
+                                40.12686155543299,
+                                0,
+                                30.044912498064118,
+                                35.693145495442174
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "schema": {
+                        "name": "zipkin",
+                        "refId": "A",
+                        "meta": {
+                            "type": "timeseries-many",
+                            "custom": {
+                                "resultType": "matrix"
+                            },
+                            "executedQueryString": "Expr: (avg(irate(container_network_receive_bytes_total{job=\"kubelet\", metrics_path=\"/metrics/cadvisor\", cluster=\"\", namespace=\"dkrakadzeyau\"}[2m30s])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"\", namespace=\"dkrakadzeyau\", workload=~\".+\", workload_type=\"deployment\"}) by (workload))\n\nStep: 2m0s"
+                        },
+                        "fields": [
+                            {
+                                "name": "Time",
+                                "type": "time",
+                                "typeInfo": {
+                                    "frame": "time.Time"
+                                },
+                                "config": {
+                                    "interval": 120000
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "number",
+                                "typeInfo": {
+                                    "frame": "float64"
+                                },
+                                "labels": {
+                                    "workload": "zipkin"
+                                },
+                                "config": {
+                                    "displayNameFromDS": "zipkin"
+                                }
+                            }
+                        ]
+                    },
+                    "data": {
+                        "values": [
+                            [
+                                1677757200000,
+                                1677757320000,
+                                1677757440000,
+                                1677757560000,
+                                1677757680000,
+                                1677757800000,
+                                1677757920000,
+                                1677758040000,
+                                1677758160000,
+                                1677758280000,
+                                1677758400000,
+                                1677758520000,
+                                1677758640000,
+                                1677758760000,
+                                1677758880000,
+                                1677759000000
+                            ],
+                            [
+                                88.79589250666449,
+                                62.27465474261318,
+                                73.63182821206088,
+                                79.82759488919103,
+                                69.95960819919233,
+                                82.39408591643249,
+                                74.84274396078519,
+                                90.87349420794888,
+                                86.97874616844304,
+                                86.06040624525082,
+                                94.03445537446481,
+                                64.79652966753126,
+                                93.30071934165238,
+                                83.46265844440023,
+                                88.06776018857511,
+                                91.80969887027979
+                            ]
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

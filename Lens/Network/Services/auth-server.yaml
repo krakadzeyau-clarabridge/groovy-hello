@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-server
+  namespace: dkrakadzeyau
+  uid: e9c0fcac-db32-4bdd-a143-05fab4fd2acc
+  resourceVersion: '383643313'
+  creationTimestamp: '2022-05-23T16:49:23Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"secured":"true"},"name":"auth-server","namespace":"dkrakadzeyau"},"spec":{"externalName":"secure.clarabridge.net","sessionAffinity":"None","type":"ExternalName"}}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: v1
+      time: '2022-05-23T16:49:23Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:sessionAffinity: {}
+          f:type: {}
+    - manager: node-fetch
+      operation: Update
+      apiVersion: v1
+      time: '2022-08-23T11:15:48Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:externalName: {}
+          f:ports:
+            .: {}
+            k:{"port":8081,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+  selfLink: /api/v1/namespaces/dkrakadzeyau/services/auth-server
+status:
+  loadBalancer: {}
+spec:
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+  type: ExternalName
+  sessionAffinity: None
+  externalName: authentication-server.auth-app.svc.cluster.local

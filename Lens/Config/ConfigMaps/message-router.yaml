@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: message-router
+  namespace: dkrakadzeyau
+  uid: 7531b2c1-f457-4b65-9962-1b4c1d68d618
+  resourceVersion: '386490697'
+  creationTimestamp: '2022-05-23T16:37:15Z'
+  labels:
+    app.kubernetes.io/instance: message-router
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: message-router
+    helm.sh/chart: ingestion-msg-router-0.2.2
+  annotations:
+    meta.helm.sh/release-name: message-router
+    meta.helm.sh/release-namespace: dkrakadzeyau
+  managedFields:
+    - manager: Go-http-client
+      operation: Update
+      apiVersion: v1
+      time: '2022-05-23T16:37:15Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:helm.sh/chart: {}
+    - manager: node-fetch
+      operation: Update
+      apiVersion: v1
+      time: '2022-08-02T17:10:28Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          f:application.yml: {}
+          f:bootstrap.yml: {}
+  selfLink: /api/v1/namespaces/dkrakadzeyau/configmaps/message-router
+data:
+  application.yml: |
+    metadataService:
+      namespaceSuffix: dkrakadzeyau
+    security:
+      oauth2:
+        client:
+          access-token-uri: http://auth-server/oauth/token
+          client-id: ${client-id}
+          client-secret: ${client-secret}
+        resource:
+          base-resource: http://auth-server
+    spring:
+      cloud:
+        stream:
+          bindings:
+            input:
+              consumer:
+                concurrency: 20
+              destination: p0.q
+              group: msg-router
+          rabbit:
+            bindings:
+              input:
+                consumer:
+                  deadLetterExchange: msg-router.dlx
+      rabbitmq:
+        host: ${server_host}
+        password: ${password}
+        port: ${server_port}
+        ssl:
+          enabled: false
+        username: ${username}
+        virtual-host: ingestion-pipeline-dev
+      sleuth:
+        sampler:
+          probability: 1
+      zipkin:
+        base-url: http://zipkin:9411
+        discovery.client.enabled: "false"
+        enabled: true
+        sender:
+          type: web
+  bootstrap.yml: |
+    spring:
+      cloud:
+        vault:
+          authentication: kubernetes
+          config:
+            lifecycle:
+              enabled: false
+          enabled: true
+          fail-fast: true
+          kubernetes:
+            kubernetes-path: kubernetes-dev_v2
+            role: message-router
+          uri: https://vault-shared.clarabridge.io
+      profiles:
+        active: kubernetes
+    vault:
+      secrets:
+      - secret-dev/saturn/message-router/oauth2
+      - secret-dev/infra/rabbitmq/cb-ingestion-pipeline-dev-us-rabbitmq/tmp-users/ingestion-msg-router
+binaryData: {}

@@ -1,0 +1,53 @@
+https://grafana-dev-v2.clarabridge.io/d/a87fb0d919ec0ea5f6543124e16c42a5/kubernetes-compute-resources-namespace-workloads?orgId=1&var-datasource=Prometheus&var-cluster=&var-namespace=dkrakadzeyau&var-type=deployment&from=1677757200000&to=1677759000000
+
+General / Kubernetes / Compute Resources / Namespace (Workloads)
+
+Data Source:    Prometheus
+namespace:      dkrakadzeyau
+type:           deployment
+
+x
+    06:40
+    06:45
+    06:50
+    06:55
+    07:00
+    07:05
+    07:10
+y
+    00.0500
+    0.100
+    0.150
+
+services
+    ingestion-gateway - deployment
+    message-router - deployment
+    nlp-chapters-service - deployment
+    nlp-ernie-api - deployment
+    nlp-ernie-serving - deployment
+    nlp-service-en - deployment
+    nlp-spacy-service-en - deployment
+    zipkin - deployment
+
+CPU Usage
+    CPU Usage
+CPU Quota
+    CPU Quota
+Memory Usage
+    Memory Usage
+Memory Quota
+    Memory Quota
+Current Network Usage
+    Current Network Usage
+Bandwidth
+    Receive Bandwidth
+    Transmit Bandwidth
+Average Container Bandwidth by Workload
+    Average Container Bandwidth by Workload: Received
+    Average Container Bandwidth by Workload: Transmitted
+Rate of Packets
+    Rate of Received Packets
+    Rate of Transmitted Packets
+Rate of Packets Dropped
+    Rate of Received Packets Dropped
+    Rate of Transmitted Packets Dropped

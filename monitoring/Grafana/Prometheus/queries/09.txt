@@ -1,0 +1,23 @@
+(
+    sum(
+        irate(
+            container_network_receive_packets_dropped_total {
+                job="kubelet",
+                metrics_path="/metrics/cadvisor",
+                cluster="",
+                namespace="dkrakadzeyau"
+            }
+            [$__rate_interval]
+        )
+        *
+        on(namespace, pod)
+        group_left(workload, workload_type)
+        namespace_workload_pod:kube_pod_owner:relabel {
+            cluster="",
+            namespace="dkrakadzeyau",
+            workload=~".+",
+            workload_type="deployment"
+        }
+    )
+    by(workload)
+)

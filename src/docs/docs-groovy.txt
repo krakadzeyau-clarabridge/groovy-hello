@@ -1,0 +1,1090 @@
+https://docs.groovy-lang.org/docs/groovy-4.0.11/html/documentation/
+
+>
+Introduction
+1. Groovy Language Specification
+    1.1. Syntax
+        1.1.1. Comments
+            Single-line comment
+            Multiline comment
+            Groovydoc comment
+            Shebang line
+        1.1.2. Keywords
+        1.1.3. Identifiers
+            Normal identifiers
+            Quoted identifiers
+        1.1.4. Strings
+            Single-quoted string
+            String concatenation
+            Triple-single-quoted string
+            Escaping special characters
+            Unicode escape sequence
+            Double-quoted string
+            String interpolation
+            Special case of interpolating closure expressions
+            Interoperability with Java
+            GString and String hashCodes
+            Triple-double-quoted string
+            Slashy string
+            Special cases
+            Dollar slashy string
+            String summary table
+            Characters
+        1.1.5. Numbers
+            Integral literals
+            Alternative non-base 10 representations
+            Binary literal
+            Octal literal
+            Hexadecimal literal
+            Decimal literals
+            Underscore in literals
+            Number type suffixes
+            Math operations
+            The case of the division operator
+            The case of the power operator
+        1.1.6. Booleans
+        1.1.7. Lists
+        1.1.8. Arrays
+            Java-style array initialization
+        1.1.9. Maps
+    1.2. Operators
+        1.2.1. Arithmetic operators
+            Normal arithmetic operators
+            Unary operators
+            Assignment arithmetic operators
+        1.2.2. Relational operators
+        1.2.3. Logical operators
+            Precedence
+            Short-circuiting
+        1.2.4. Bitwise and bit shift operators
+            Bitwise operators
+            Bit shift operators
+        1.2.5. Conditional operators
+            Not operator
+            Ternary operator
+            Elvis operator
+            Elvis assignment operator
+        1.2.6. Object operators
+            Safe navigation operator
+            Direct field access operator
+            Method pointer operator
+            Method reference operator
+        1.2.7. Regular expression operators
+            Pattern operator
+            Find operator
+            Match operator
+            Comparing Find vs Match operators
+        1.2.8. Other operators
+            Spread operator
+            Spreading method arguments
+            Spread list elements
+            Spread map elements
+            Range operator
+            Spaceship operator
+            Subscript operator
+            Safe index operator
+            Membership operator
+            Identity operator
+            Coercion operator
+            Diamond operator
+            Call operator
+        1.2.9. Operator precedence
+        1.2.10. Operator overloading
+    1.3. Program structure
+        1.3.1. Package names
+        1.3.2. Imports
+            Default imports
+            Simple import
+            Star import
+            Static import
+            Static import aliasing
+            Static star import
+            Import aliasing
+        1.3.3. Scripts versus classes
+            public static void main vs script
+            Script class
+            Methods
+            Variables
+    1.4. Object orientation
+        1.4.1. Types
+            Primitive types
+            Reference Types
+            Generics
+        1.4.2. Classes
+            Normal class
+            Inner class
+            Anonymous inner class
+            Abstract class
+            Inheritance
+            Superclasses
+            Interfaces
+        1.4.3. Class members
+            Constructors
+            Positional parameters
+            Named parameters
+            Methods
+            Method definition
+            Named parameters
+            Mixing named and positional parameters
+            Default arguments
+            Varargs
+            Method selection algorithm
+            Exception declaration
+            Fields and Properties
+            Fields
+            Properties
+            Property naming conventions
+            Modifiers on a property
+            Annotations on a property
+            Split property definition with an explicit backing field
+            Explicit accessor methods
+        1.4.4. Annotations
+            Annotation definition
+            Annotation placement
+            Annotation member values
+            Retention policy
+            Closure annotation parameters
+            Meta-annotations
+            Declaring meta-annotations
+            Behavior of meta-annotations
+            Meta-annotation parameters
+            Handling duplicate annotations in meta-annotations
+            Custom meta-annotation processors
+        1.4.5. Traits
+            Methods
+            Public methods
+            Abstract methods
+            Private methods
+            Final methods
+            The meaning of this
+            Interfaces
+            Properties
+            Fields
+            Private fields
+            Public fields
+            Composition of behaviors
+            Overriding default methods
+            Extending traits
+            Simple inheritance
+            Multiple inheritance
+            Duck typing and traits
+            Dynamic code
+            Dynamic methods in a trait
+            Multiple inheritance conflicts
+            Default conflict resolution
+            User conflict resolution
+            Runtime implementation of traits
+            Implementing a trait at runtime
+            Implementing multiple traits at once
+            Chaining behavior
+            Semantics of super inside a trait
+            Advanced features
+            SAM type coercion
+            Differences with Java 8 default methods
+            Differences with mixins
+            Static methods, properties and fields
+            Inheritance of state gotchas
+            Self types
+            Type constraints on traits
+            The @SelfType annotation
+            Differences with Sealed annotation (incubating)
+            Limitations
+            Compatibility with AST transformations
+            Prefix and postfix operations
+        1.4.6. Record classes (incubating)
+            Special record features
+            Compact constructor
+            Serializability
+            Groovy enhancements
+            Argument defaults
+            Declarative toString customization
+            Obtaining a list of the record component values
+            Obtaining a map of the record component values
+            Obtaining the number of components in a record
+            Obtaining the nth component from a record
+            Optional Groovy features
+            Copying
+            Deep immutability
+            Obtaining the components of a record as a typed tuple
+            Other differences to Java
+        1.4.7. Sealed hierarchies (incubating)
+            Differences to Java
+    1.5. Closures
+        1.5.1. Syntax
+            Defining a closure
+            Closures as an object
+            Calling a closure
+        1.5.2. Parameters
+            Normal parameters
+            Implicit parameter
+            Varargs
+        1.5.3. Delegation strategy
+            Groovy closures vs lambda expressions
+            Owner, delegate and this
+            The meaning of this
+            Owner of a closure
+            Delegate of a closure
+            Delegation strategy
+            Delegation strategy in the presence of metaprogramming
+        1.5.4. Closures in GStrings
+        1.5.5. Closure coercion
+        1.5.6. Functional programming
+            Currying
+            Left currying
+            Right currying
+            Index based currying
+            Memoization
+            Composition
+            Trampoline
+            Method pointers
+    1.6. Semantics
+        1.6.1. Statements
+            Variable definition
+            Variable assignment
+            Multiple assignment
+            Overflow and Underflow
+            Object destructuring with multiple assignment
+            Control structures
+            Conditional structures
+            if / else
+            switch / case
+            Looping structures
+            Classic for loop
+            Enhanced classic Java-style for loop
+            Multi-assignment in combination with for loop
+            for in loop
+            while loop
+            do/while loop
+            Exception handling
+            try / catch / finally
+            Multi-catch
+            ARM Try with resources
+            Power assertion
+            Labeled statements
+        1.6.2. Expressions
+            GPath expressions
+            Object navigation
+            Expression Deconstruction
+            GPath for XML navigation
+        1.6.3. Promotion and coercion
+            Number promotion
+            Closure to type coercion
+            Assigning a closure to a SAM type
+            Calling a method accepting a SAM type with a closure
+            Closure to arbitrary type coercion
+            Map to type coercion
+            String to enum coercion
+            Custom type coercion
+            Class literals vs variables and the as operator
+        1.6.4. Optionality
+            Optional parentheses
+            Optional semicolons
+            Optional return keyword
+            Optional public keyword
+        1.6.5. The Groovy Truth
+            Boolean expressions
+            Collections and Arrays
+            Matchers
+            Iterators and Enumerations
+            Maps
+            Strings
+            Numbers
+            Object References
+            Customizing the truth with asBoolean() methods
+        1.6.6. Typing
+            Optional typing
+            Static type checking
+            The @TypeChecked annotation
+            Activating type checking at compile time
+            Skipping sections
+            Type checking assignments
+            List and map constructors
+            Method resolution
+            Type inference
+            Principles
+            Variables vs fields in type inference
+            Collection literal type inference
+            Least upper bound
+            instanceof inference
+            Flow typing
+            Advanced type inference
+            Closures and type inference
+            Return type inference
+            Parameter type inference
+            Explicit closure parameters
+            Parameters inferred from single-abstract method types
+            The @ClosureParams annotation
+            @DelegatesTo
+            Static compilation
+            Dynamic vs static
+            The @CompileStatic annotation
+            Key benefits
+        1.6.7. Type checking extensions
+            Writing a type checking extension
+            Towards a smarter type checker
+            The extensions attribute
+            A DSL for type checking
+            Type checking extensions API
+            AST
+            Events
+            Working with extensions
+            Support classes
+            Class nodes
+            Helping the type checker
+            Throwing an error
+            isXXXExpression
+            Virtual methods
+            Scoping
+            Other useful methods
+            Advanced type checking extensions
+            Precompiled type checking extensions
+            Using @Grab in a type checking extension
+            Sharing or packaging type checking extensions
+            Global type checking extensions
+            Type checking extensions and @CompileStatic
+            Mixed mode compilation
+            Transforming the AST in an extension
+            Examples
+2. Tools
+    2.1. Running Groovy from the commandline
+        2.1.1. groovy, the Groovy command
+    2.2. Compiling Groovy
+        2.2.1. groovyc, the Groovy compiler
+        2.2.2. Ant task
+        2.2.3. Gant
+        2.2.4. Gradle
+        2.2.5. Maven integration
+            GMaven and GMavenPlus
+            GMaven
+            GMavenPlus
+            GMaven 2
+            The Groovy Eclipse Maven plugin
+        2.2.6. Joint compilation
+        2.2.7. Android support
+    2.3. Groovysh, the Groovy shell
+        2.3.1. Groovy : Groovy Shell
+            Features
+            Command-line Options and Arguments
+            Evaluating Expressions
+            Simple Expressions
+            Evaluation Result
+            Multi-line Expressions
+            Define a Class
+            Use the Class
+            Variables
+            Functions
+            Commands
+            Recognized Commands
+            help
+            exit
+            import
+            grab
+            display
+            clear
+            show
+            inspect
+            purge
+            edit
+            load
+            save
+            record
+            history
+            alias
+            doc
+            set
+            Preferences
+            Recognized Preferences
+            interpreterMode
+            verbosity
+            colors
+            show-last-result
+            sanitize-stack-trace
+            editor
+            Setting a Preference
+            Listing Preferences
+            Clearing Preferences (i.e. Resetting to Defaults)
+            User Profile Scripts and State
+            Profile Scripts
+            $HOME/.groovy/groovysh.profile
+            $HOME/.groovy/groovysh.rc
+            State
+            $HOME/.groovy/groovysh.history
+            Custom commands
+            Troubleshooting
+            Platform Problems
+            Problems loading the JLine DLL
+            Problems with Cygwin on Windows
+        2.3.2. GMavenPlus Maven Plugin
+        2.3.3. Gradle Groovysh Plugin
+    2.4. groovyConsole, the Groovy swing console
+        2.4.1. Groovy : Groovy Console
+        2.4.2. Basics
+        2.4.3. Features
+            Command-line Options and Arguments
+            Running Scripts
+            Editing Files
+            History and results
+            Interrupting a script
+            And more
+        2.4.4. Embedding the Console
+        2.4.5. Visualizing script output results
+        2.4.6. Advanced debugging: AST browser
+        2.4.7. Advanced debugging: CST browser
+    2.5. groovydoc, the Groovy & Java documentation generator
+        2.5.1. The groovydoc command line tool
+        2.5.2. The groovydoc Ant task
+            Required taskdef
+            <groovydoc> Attributes
+            <groovydoc> Nested Elements
+            link
+            Example #1 - <groovydoc> Ant task
+            Example #2 - Executing <groovydoc> from Groovy
+            Custom templates
+            Custom Groovydoc class
+            Using the custom groovydoc task
+        2.5.3. GMavenPlus Maven Plugin
+    2.6. IDE integration
+3. User Guides
+    3.1. Getting started
+        3.1.1. Download
+            Stable
+            Snapshots
+            Prerequisites
+            3.1.2. Maven Repository
+            3.1.3. SDKMAN! (The Software Development Kit Manager)
+            3.1.4. Other ways to get Groovy
+            Installation on Mac OS X
+            MacPorts
+            Homebrew
+            Installation on Windows
+            Other Distributions
+            Source Code
+            IDE plugin
+        3.1.5. Install Binary
+    3.2. Differences with Java
+        3.2.1. Default imports
+        3.2.2. Multi-methods
+        3.2.3. Array initializers
+        3.2.4. Package scope visibility
+        3.2.5. ARM blocks
+        3.2.6. Inner classes
+            Static inner classes
+            Anonymous Inner Classes
+            Creating Instances of Non-Static Inner Classes
+        3.2.7. Lambda expressions and the method reference operator
+        3.2.8. GStrings
+        3.2.9. String and Character literals
+        3.2.10. Behaviour of ==
+        3.2.11. Primitives and wrappers
+            Numeric Primitive Optimisation with @CompileStatic
+            Positive/Negative zero edge case
+        3.2.12. Conversions
+        3.2.13. Extra keywords
+    3.3. Groovy Development Kit
+        3.3.1. Working with IO
+            Reading files
+            Writing files
+            Traversing file trees
+            Data and objects
+            Executing External Processes
+        3.3.2. Working with collections
+            Lists
+            List literals
+            List as a boolean expression
+            Iterating on a list
+            Manipulating lists
+            Filtering and searching
+            Adding or removing elements
+            Set operations
+            Sorting
+            Duplicating elements
+            Maps
+            Map literals
+            Map property notation
+            Iterating on maps
+            Manipulating maps
+            Adding or removing elements
+            Keys, values and entries
+            Filtering and searching
+            Grouping
+            Ranges
+            Syntax enhancements for collections
+            GPath support
+            Spread operator
+            The star-dot `*.' operator
+            Slicing with the subscript operator
+            Enhanced Collection Methods
+        3.3.3. Working with arrays
+            Arrays
+            Array literals
+            Iterating on a list
+            Other useful methods
+        3.3.4. Working with legacy Date/Calendar types
+        3.3.5. Working with Date/Time types
+            Formatting and parsing
+            Manipulating date/time
+            Addition and subtraction
+            Multiplication and division
+            Incrementing and decrementing
+            Negation
+            Interacting with date/time values
+            Property notation
+            Ranges, upto, and downto
+            Combining date/time values
+            Creating periods and durations
+            Converting between legacy and JSR 310 types
+        3.3.6. Handy utilities
+            ConfigSlurper
+            Expando
+            Observable list, map and set
+    3.4. Metaprogramming
+        3.4.1. Runtime metaprogramming
+            GroovyObject interface
+            invokeMethod
+            get/setProperty
+            get/setMetaClass
+            get/setAttribute
+            methodMissing
+            propertyMissing
+            static methodMissing
+            static propertyMissing
+            GroovyInterceptable
+            Categories
+            Metaclasses
+            The default metaclass MetaClassImpl
+            Custom metaclasses
+            Delegating metaclass
+            Magic package
+            Per instance metaclass
+            ExpandoMetaClass
+            Methods
+            Properties
+            Constructors
+            Static Methods
+            Borrowing Methods
+            Dynamic Method Names
+            Runtime Discovery
+            GroovyObject Methods
+            Overriding Static invokeMethod
+            Extending Interfaces
+            Extension modules
+            Extending existing classes
+            Instance methods
+            Static methods
+            Module descriptor
+            Extension modules and classpath
+            Compatibility with type checking
+        3.4.2. Compile-time metaprogramming
+            Available AST transformations
+            Code generation transformations
+            @groovy.transform.ToString
+            @groovy.transform.EqualsAndHashCode
+            @groovy.transform.TupleConstructor
+            Implementation Details
+            Immutability support
+            Customization options
+            @groovy.transform.MapConstructor
+            @groovy.transform.Canonical
+            @groovy.transform.InheritConstructors
+            @groovy.lang.Category
+            @groovy.transform.IndexedProperty
+            @groovy.lang.Lazy
+            @groovy.lang.Newify
+            @groovy.transform.Sortable
+            @groovy.transform.builder.Builder
+            @groovy.transform.AutoImplement
+            @groovy.transform.NullCheck
+            Class design annotations
+            @groovy.transform.BaseScript
+            @groovy.lang.Delegate
+            @groovy.transform.Immutable
+            @groovy.transform.ImmutableBase
+            @groovy.transform.PropertyOptions
+            @groovy.transform.VisibilityOptions
+            @groovy.transform.ImmutableOptions
+            @groovy.transform.KnownImmutable
+            @groovy.transform.Memoized
+            @groovy.transform.TailRecursive
+            @groovy.lang.Singleton
+            @groovy.lang.Mixin
+            Logging improvements
+            @groovy.util.logging.Log
+            @groovy.util.logging.Commons
+            @groovy.util.logging.Log4j
+            @groovy.util.logging.Log4j2
+            @groovy.util.logging.Slf4j
+            @groovy.util.logging.PlatformLog
+            Declarative concurrency
+            @groovy.transform.Synchronized
+            @groovy.transform.WithReadLock and @groovy.transform.WithWriteLock
+            Easier cloning and externalizing
+            @groovy.transform.AutoClone
+            @groovy.transform.AutoExternalize
+            Safer scripting
+            @groovy.transform.ThreadInterrupt
+            @groovy.transform.TimedInterrupt
+            @groovy.transform.ConditionalInterrupt
+            Compiler directives
+            @groovy.transform.Field
+            @groovy.transform.PackageScope
+            @groovy.transform.Final
+            @groovy.transform.AutoFinal
+            @groovy.transform.AnnotationCollector
+            @groovy.transform.TypeChecked
+            @groovy.transform.CompileStatic
+            @groovy.transform.CompileDynamic
+            @groovy.lang.DelegatesTo
+            @groovy.transform.SelfType
+            Swing patterns
+            @groovy.beans.Bindable
+            @groovy.beans.ListenerList
+            @groovy.beans.Vetoable
+            Test assistance
+            @groovy.test.NotYetImplemented
+            @groovy.transform.ASTTest
+            Grape handling
+            @groovy.lang.Grab
+            @groovy.lang.GrabConfig
+            @groovy.lang.GrabExclude
+            @groovy.lang.GrabResolver
+            @groovy.lang.Grapes
+            Developing AST transformations
+            Compilation phases guide
+            Local transformations
+            Global transformations
+            AST API guide
+            AbstractASTTransformation
+            ClassCodeExpressionTransformer
+            AST Nodes
+            Macros
+            Introduction
+            Statements and expressions
+            Variable substitution
+            MacroClass
+            @Macro methods
+            Testing AST transformations
+            Separating source trees
+            Debugging AST transformations
+            ASTMatcher
+            ASTTest
+            External references
+    3.5. Dependency management with Grape
+    3.5.1. Quick start
+        Add a Dependency
+        Specify Additional Repositories
+        Maven Classifiers
+        Excluding Transitive Dependencies
+        JDBC Drivers
+        Using Grape From the Groovy Shell
+        Proxy settings
+        Logging
+    3.5.2. Detail
+    3.5.3. Usage
+        Annotation
+        Multiple Grape Annotations
+        Method call
+        grab(HashMap) Parameters
+        Arguments Map arguments
+        Command Line Tool
+        Advanced configuration
+        Repository Directory
+        Customize Ivy settings
+        More Examples
+    3.6. Testing Guide
+        3.6.1. Introduction
+        3.6.2. Language Features
+            Power Assertions
+            Mocking and Stubbing
+            Map Coercion
+            Closure Coercion
+            MockFor and StubFor
+            Expando Meta-Class (EMC)
+            GDK Methods
+            Iterable#combinations
+            Iterable#eachCombination
+            Tool Support
+            Test Code Coverage
+        3.6.3. Testing with JUnit
+            JUnit 3
+            Assertion Methods
+            shouldFail Methods
+            notYetImplemented Method
+            JUnit 4
+            JUnit 5
+        3.6.4. Testing with Spock
+            Specifications
+            More Spock
+        3.6.5. Functional Tests with Geb
+            A Geb Script
+            More Geb
+    3.7. Tune parsing performance of Parrot parser
+    3.8. Processing JSON
+    3.8.1. JsonSlurper
+        Parser Variants
+    3.8.2. JsonOutput
+        Customizing Output
+        Formatted Output
+        Builders
+    3.9. Interacting with a SQL database
+    3.9.1. Connecting to the database
+        Connecting with a DataSource
+        Connecting using @Grab
+    3.9.2. Executing SQL
+        Creating tables
+    3.9.3. Basic CRUD operations
+        Creating/Inserting data
+        Reading rows
+        Updating rows
+        Deleting rows
+    3.9.4. Advanced SQL operations
+        Working with transactions
+        Using batches
+        Performing pagination
+        Fetching metadata
+        Named and named-ordinal parameters
+        Stored procedures
+    3.9.5. Using DataSets
+    3.10. Querying collections in SQL-like style
+    3.10.1. GINQ a.k.a. Groovy-Integrated Query
+        GINQ Syntax
+        Data Source
+        Iterable Data Source
+        Stream Data Source
+        Array Data Source
+        GINQ Result Set Data Source
+        Projection
+        Distinct
+        Filtering
+        In
+        Not In
+        Exists
+        Not Exists
+        Joining
+        Grouping
+        Aggregate Functions
+        Sorting
+        Pagination
+        Nested GINQ
+        Nested GINQ in from clause
+        Nested GINQ in where clause
+        Nested GINQ in select clause
+        Window Functions
+        rowNumber
+        rank, denseRank, percentRank, cumeDist and ntile
+        lead and lag
+        firstValue, lastValue and nthValue
+        min, max, count, sum, avg, median, stdev, stdevp, var ,varp and agg
+        GINQ Tips
+        Row Number
+        List Comprehension
+        Query & Update
+        Alternative for with clause
+        Alternative for case-when
+        Query JSON
+        Parallel Querying
+        Customize GINQ
+        Optimize GINQ
+        GINQ Examples
+        Generate Multiplication Table
+        More examples
+    3.11. Processing XML
+        3.11.1. Parsing XML
+            XmlParser and XmlSlurper
+            DOMCategory
+        3.11.2. GPath
+            Simply traversing the tree
+            Flexible navigation with children (*), depthFirst (**) and breadthFirst
+        3.11.3. Creating XML
+            MarkupBuilder
+            StreamingMarkupBuilder
+            MarkupBuilderHelper
+            DOMToGroovy
+        3.11.4. Manipulating XML
+            Adding nodes
+            Modifying / Removing nodes
+            Printing XML
+            XmlUtil
+    3.12. Processing YAML
+        3.12.1. YamlSlurper
+            Builders
+    3.13. Processing TOML
+        3.13.1. TomlSlurper
+            Builders
+    3.14. Groovy Contracts – design by contract support for Groovy
+        3.14.1. Applying @Invariant, @Requires and @Ensures
+        3.14.2. More Features
+        3.14.3. The Stack Example
+    3.15. Scripting Ant tasks
+    3.16. The <groovy> Ant Task
+        3.16.1. <groovy>
+        3.16.2. Required taskdef
+        3.16.3. <groovy> attributes
+        3.16.4. Parameters specified as nested elements
+            <classpath>
+            <arg>
+        3.16.5. Available bindings
+        3.16.6. Examples
+    3.17. The <groovyc> Ant Task
+    3.17.1. <groovyc>
+        Description
+        Required taskdef
+        <groovyc> Attributes
+        <groovyc> Nested Elements
+        Joint Compilation
+    3.18. Template engines
+        3.18.1. Introduction
+        3.18.2. Template framework
+        3.18.3. SimpleTemplateEngine
+            Advanced Usage Note
+        3.18.4. StreamingTemplateEngine
+        3.18.5. GStringTemplateEngine
+        3.18.6. XmlTemplateEngine
+        3.18.7. The MarkupTemplateEngine
+            The template format
+            Basics
+            Support methods
+            Includes
+            Fragments
+            Layouts
+            Rendering contents
+            Creation of a template engine
+            Configuration options
+            Automatic formatting
+            Automatic escaping
+            Common gotchas
+            Strings containing markup
+            Internationalization
+            Custom template classes
+            Type checked templates
+            Optional type checking
+            Alternative declaration of types
+            Performance of type checked templates
+        3.18.8. Other solutions
+    3.19. Servlet support
+        3.19.1. Implicit variables
+        3.19.2. Setting up groovlets
+    3.20. Integrating Groovy in a Java application
+        3.20.1. Groovy integration mechanisms
+            Eval
+            GroovyShell
+            Multiple sources
+            Sharing data between a script and the application
+            Custom script class
+            GroovyClassLoader
+            GroovyScriptEngine
+            CompilationUnit
+        3.20.2. JSR 223 javax.script API
+    3.21. Domain-Specific Languages
+        3.21.1. Command chains
+        3.21.2. Operator overloading
+        3.21.3. Script base classes
+            The Script class
+            The @BaseScript annotation
+            Alternate abstract method
+        3.21.4. Adding properties to numbers
+        3.21.5. @DelegatesTo
+            Explaining delegation strategy at compile time
+            @DelegatesTo
+            DelegatesTo modes
+            Simple delegation
+            Delegation strategy
+            Delegate to parameter
+            Multiple closures
+            Delegating to a generic type
+            Delegating to an arbitrary type
+        3.21.6. Compilation customizers
+            Introduction
+            Import customizer
+            AST transformation customizer
+            Secure AST customizer
+            Source aware customizer
+            Customizer builder
+            Import customizer
+            AST transformation customizer
+            Secure AST customizer
+            Source aware customizer
+            Inlining a customizer
+            Multiple customizers
+            The configscript commandline parameter
+            Configscript example: Static compilation by default
+            Configscript example: Setting system properties
+            AST transformations
+        3.21.7. Custom type checking extensions
+        3.21.8. Builders
+            Existing builders
+            MarkupBuilder
+            StreamingMarkupBuilder
+            SaxBuilder
+            StaxBuilder
+            DOMBuilder
+            NodeBuilder
+            JsonBuilder
+            StreamingJsonBuilder
+            SwingBuilder
+            AntBuilder
+            CliBuilder
+            Using Annotations and an interface
+            Using Annotations and an instance
+            Using Annotations and a script
+            Options with arguments
+            Specifying a type
+            Custom parsing of the argument String
+            Options with multiple arguments
+            Types and multiple arguments
+            Setting a default value
+            Use with TypeChecked
+            Advanced CLI Usage
+            Apache Commons CLI
+            Picocli
+            ObjectGraphBuilder
+            JmxBuilder
+            FileTreeBuilder
+            Creating a builder
+            BuilderSupport
+            FactoryBuilderSupport
+    3.22. Working with JMX
+        3.22.1. Introduction
+        3.22.2. Monitoring the JVM
+        3.22.3. Monitoring Tomcat
+        3.22.4. OC4J Example
+        3.22.5. WebLogic Example
+        3.22.6. Spring Example
+        3.22.7. Troubleshooting
+            java.lang.SecurityException
+        3.22.8. JmxBuilder
+            Instantiating JmxBuilder
+            JMX Connectors
+            Connector Server
+            Connector Client
+            JmxBuilder MBean Export
+            Implicit vs Explicit Descriptors
+            The JmxBuilder.export() Node
+            JmxBuilder.export() Syntax
+            Integration with GroovyMBean Class
+            MBean Registration with JmxBuilder.bean()
+            Implicit Export
+            JConsole view of Exported Bean
+            JmxBuilder.bean() Syntax
+            Bean() Node - Specifying MBean ObjectName
+            Bean() Node - Attribute Export
+            Export All Attributes with Wildcard "*"
+            Export Attribute List
+            Export Attribute with Explicit Descriptors
+            Bean() Node - Constructor Export
+            Export all Constructors with "*"
+            Export Constructors using Parameter Descriptor
+            Export Constructor with Explicit Descriptors
+            Bean() Node - Operation Export
+            Export All Operations with "*"
+            Export Operation List
+            Export Operations by Signature
+            Export Operations with Explicit Descriptors
+            Embedding Descriptor
+            Timer Export
+            Timer Node Syntax
+            Exporting a Timer
+            Timer Period
+            JmxBuilder and Events
+            Event Handling Closures
+            Parameterless
+            With Event Parameter
+            Handling Attribute onChange Event
+            Attribute onChange Event Object
+            Handling Operation onCall Event
+            Operation onCall Event Object
+            Listener MBean
+            Listening to JMX Events
+            Listener Node Syntax
+            Emitting JMX Events
+            Emitter Syntax
+            Declare the Emitter
+            Broadcast Event
+            Sending Event Objects
+        3.22.9. Further JMX Information
+    3.23. Creating Swing UIs
+    3.24. Security
+    3.25. Design patterns in Groovy
+        3.25.1. Patterns
+            Abstract Factory Pattern
+            Example
+            Adapter Pattern
+            Delegation Example
+            Inheritance Example
+            Adapting using Closures
+            Adapting using the ExpandoMetaClass
+            Bouncer Pattern
+            Null Checking Example
+            Validation Example
+            Chain of Responsibility Pattern
+            Example using traditional classes
+            Example using simplifying strategies
+            When not to use
+            Going further
+            Command Pattern
+            Example with traditional classes
+            Simplifying variations
+            Composite Pattern
+            Example
+            Decorator Pattern
+            Traditional Example
+            Simplifying with closures or lambdas
+            A touch of dynamic behaviour
+            Runtime behaviour embellishment
+            More dynamic decorating
+            Decorating with an Interceptor
+            Decorating with java.lang.reflect.Proxy
+            Decorating with Spring
+            Asynchronous Decorators using GPars
+            Delegation Pattern
+            Implement Delegation Pattern using ExpandoMetaClass
+            Implement Delegation Pattern using @Delegate annotation
+            Flyweight Pattern
+            Example
+            Iterator Pattern
+            Loan my Resource Pattern
+            Example
+            Using Monoids
+            A touch of formalism
+            Benefits of monoids
+            Working with Non-monoids
+            Null Object Pattern
+            Simple Example
+            Tree Example
+            Observer Pattern
+            Example
+            @Bindable and @Vetoable
+            Pimp my Library Pattern
+            Example
+            Proxy Pattern
+            Example
+            Singleton Pattern
+            Example: The Classic Java Singleton
+            Example: Singleton via MetaProgramming
+            Guice Example
+            Spring Example
+            Further information
+            State Pattern
+            Example
+            Variation 1: Leveraging Interface-Oriented Design
+            Variation 2: Extract State Pattern Logic
+            Variation 3: Bring on the DSL
+            Strategy Pattern
+            Example using traditional class hierarchy
+            Example using closures
+            Example using lambdas
+            Template Method Pattern
+            Example with traditional classes
+            Example with simplifying strategies
+            Visitor Pattern
+            Simple Example
+            Advanced Example
+            When to use this
+            What happens if we add a new type?
+            What if we want to have different iteration patterns?
+            Make it Groovy
+            Summary
+            Further Information
+        3.25.2. References
+4. Acknowledgements
+    4.1. Contributors
+    4.2. License

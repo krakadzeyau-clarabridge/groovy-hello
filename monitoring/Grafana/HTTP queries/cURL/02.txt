@@ -1,0 +1,18 @@
+curl 'https://grafana-dev-v2.clarabridge.io/api/ds/query' \
+  -H 'authority: grafana-dev-v2.clarabridge.io' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'content-type: application/json' \
+  -H 'cookie: grafana_session=fd66462903d5ad53269c9cd21b39f5af' \
+  -H 'origin: https://grafana-dev-v2.clarabridge.io' \
+  -H 'referer: https://grafana-dev-v2.clarabridge.io/d/a87fb0d919ec0ea5f6543124e16c42a5/kubernetes-compute-resources-namespace-workloads?orgId=1&var-datasource=Prometheus&var-cluster=&var-namespace=dkrakadzeyau&var-type=deployment&from=1677757200000&to=1677759000000' \
+  -H 'sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
+  -H 'x-grafana-org-id: 1' \
+  --data-raw $'{"queries":[{"expr":"sum(\\n    container_memory_working_set_bytes{job=\\"kubelet\\", metrics_path=\\"/metrics/cadvisor\\", cluster=\\"\\", namespace=\\"dkrakadzeyau\\", container\u0021=\\"\\", image\u0021=\\"\\"}\\n  * on(namespace,pod)\\n    group_left(workload, workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\\"\\", namespace=\\"dkrakadzeyau\\", workload_type=\\"deployment\\"}\\n) by (workload, workload_type)\\n","format":"time_series","intervalFactor":2,"legendFormat":"{{workload}} - {{workload_type}}","legendLink":null,"step":10,"refId":"A","datasource":{"uid":"prometheus","type":"prometheus"},"queryType":"timeSeriesQuery","exemplar":false,"requestId":"3A","utcOffsetSec":-18000,"interval":"","datasourceId":1,"intervalMs":60000,"maxDataPoints":1053},{"expr":"scalar(kube_resourcequota{cluster=\\"\\", namespace=\\"dkrakadzeyau\\", type=\\"hard\\",resource=\\"requests.memory\\"})","format":"time_series","intervalFactor":2,"legendFormat":"quota - requests","legendLink":null,"step":10,"refId":"B","datasource":{"uid":"prometheus","type":"prometheus"},"queryType":"timeSeriesQuery","exemplar":false,"requestId":"3B","utcOffsetSec":-18000,"interval":"","datasourceId":1,"intervalMs":60000,"maxDataPoints":1053},{"expr":"scalar(kube_resourcequota{cluster=\\"\\", namespace=\\"dkrakadzeyau\\", type=\\"hard\\",resource=\\"limits.memory\\"})","format":"time_series","intervalFactor":2,"legendFormat":"quota - limits","legendLink":null,"step":10,"refId":"C","datasource":{"uid":"prometheus","type":"prometheus"},"queryType":"timeSeriesQuery","exemplar":false,"requestId":"3C","utcOffsetSec":-18000,"interval":"","datasourceId":1,"intervalMs":60000,"maxDataPoints":1053}],"range":{"from":"2023-03-02T11:40:00.000Z","to":"2023-03-02T12:10:00.000Z","raw":{"from":"2023-03-02T11:40:00.000Z","to":"2023-03-02T12:10:00.000Z"}},"from":"1677757200000","to":"1677759000000"}' \
+  --compressed

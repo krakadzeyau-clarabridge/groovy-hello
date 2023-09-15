@@ -1,0 +1,107 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ingestion-gateway
+  namespace: dkrakadzeyau
+  uid: 7c4bb2b3-6990-469e-88fe-d16dff1473b6
+  resourceVersion: '382746244'
+  creationTimestamp: '2022-06-06T13:39:54Z'
+  labels:
+    app.kubernetes.io/instance: ingestion-gateway
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: ingestion-gateway
+    helm.sh/chart: ingestion-gateway-0.2.6
+  annotations:
+    meta.helm.sh/release-name: ingestion-gateway
+    meta.helm.sh/release-namespace: dkrakadzeyau
+  managedFields:
+    - manager: Go-http-client
+      operation: Update
+      apiVersion: v1
+      time: '2022-06-06T13:39:54Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:helm.sh/chart: {}
+    - manager: node-fetch
+      operation: Update
+      apiVersion: v1
+      time: '2022-08-02T17:05:54Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          f:application.yml: {}
+          f:bootstrap.yml: {}
+  selfLink: /api/v1/namespaces/dkrakadzeyau/configmaps/ingestion-gateway
+data:
+  application.yml: |
+    metadataService:
+      namespaceSuffix: dkrakadzeyau
+    attribute-validation:
+      ignoreList:
+      - vtt_id
+    security:
+      oauth2:
+        client:
+          client-id: ${client-id}
+          client-secret: ${client-secret}
+        resource:
+          base-resource: http://auth-server:8081
+          token-info-uri: http://auth-server:8081/oauth/check_token
+    spring:
+      cloud:
+        stream:
+          bindings:
+            output:
+              destination: gateway.tx
+      jackson:
+        deserialization:
+          fail_on_unknown_properties: false
+      rabbitmq:
+        host: ${server_host}
+        password: ${password}
+        port: ${server_port}
+        ssl:
+          enabled: false
+        username: ${username}
+        virtual-host: ingestion-pipeline-dev
+      sleuth:
+        sampler:
+          probability: 1
+      zipkin:
+        base-url: http://zipkin:9411
+        discovery.client.enabled: "false"
+        enabled: true
+        sender:
+          type: web
+  bootstrap.yml: |
+    spring:
+      cloud:
+        vault:
+          authentication: kubernetes
+          config:
+            lifecycle:
+              enabled: false
+          enabled: true
+          fail-fast: true
+          kubernetes:
+            kubernetes-path: kubernetes-dev_v2
+            role: ingestion-gateway
+          uri: https://vault-shared.clarabridge.io
+      profiles:
+        active: kubernetes
+    vault:
+      secrets:
+      - secret-dev/saturn/ingestion-gateway/oauth2
+      - secret-dev/infra/rabbitmq/cb-ingestion-pipeline-dev-us-rabbitmq/tmp-users/ingestion-gateway
+binaryData: {}

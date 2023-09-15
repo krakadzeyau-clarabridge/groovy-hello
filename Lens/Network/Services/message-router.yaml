@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: message-router
+  namespace: dkrakadzeyau
+  uid: c19e3f5a-1a10-4472-a02e-bdde46d9727f
+  resourceVersion: '267817139'
+  creationTimestamp: '2022-05-23T16:37:15Z'
+  labels:
+    app.kubernetes.io/instance: message-router
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: message-router
+    helm.sh/chart: ingestion-msg-router-0.2.2
+  annotations:
+    meta.helm.sh/release-name: message-router
+    meta.helm.sh/release-namespace: dkrakadzeyau
+  managedFields:
+    - manager: Go-http-client
+      operation: Update
+      apiVersion: v1
+      time: '2022-05-23T16:37:15Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:helm.sh/chart: {}
+        f:spec:
+          f:ports:
+            .: {}
+            k:{"port":8085,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":8125,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+          f:sessionAffinity: {}
+          f:type: {}
+  selfLink: /api/v1/namespaces/dkrakadzeyau/services/message-router
+status:
+  loadBalancer: {}
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8125
+      targetPort: http
+    - name: management
+      protocol: TCP
+      port: 8085
+      targetPort: management
+  selector:
+    app.kubernetes.io/instance: message-router
+    app.kubernetes.io/name: message-router
+  clusterIP: 10.100.80.25
+  clusterIPs:
+    - 10.100.80.25
+  type: ClusterIP
+  sessionAffinity: None
